@@ -1,15 +1,15 @@
 class CdvizCollector < Formula
   desc "A service & cli to collect SDLC/CI/CD events and to dispatch as cdevents."
   homepage "https://cdviz.dev"
-  version "0.5.1"
+  version "0.6.1"
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.5.1/cdviz-collector-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "0dbba9a10a570694ac571f33f2c201a8ed9a766e8c8e7f91b60f179d213265dd"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.6.1/cdviz-collector-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "d61f7e84252928610e1c2bde1b81c6afdd94c2e3946cfc18c6f4edd5d6ced95b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.5.1/cdviz-collector-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "d5401e43e4223fbbd094cef1ba1634b29d9687ceec4893946c6bacd25b14c44b"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.6.1/cdviz-collector-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "9d841535c8a23934b5adab1715aa45e4e3fd2640c0bd41751a95997f4b1e64fa"
     end
   end
   license "Apache-2.0"
