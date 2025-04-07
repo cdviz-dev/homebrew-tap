@@ -1,18 +1,18 @@
 class CdvizCollector < Formula
   desc "A service & cli to collect SDLC/CI/CD events and to dispatch as cdevents."
   homepage "https://cdviz.dev"
-  version "0.6.4"
+  version "0.7.2"
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.6.4/cdviz-collector-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "3ce2a7fe743fe04c9bc0d0894a90d9b4c2e66a941565f99efd8f97165a4e56fe"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.7.2/cdviz-collector-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "bb7d9bb24f2e428e4f51d99c1816d323a52b3e7019846d4d90835e2c6f01a2e8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.6.4/cdviz-collector-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "93a1cdabad80546a7cb5b6496c786605e6e8d662cb3c5828e8f2c6019f4dec5b"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.7.2/cdviz-collector-x86_64-unknown-linux-musl.tar.xz"
+      sha256 "a4f0c2d08f1a5e200691bc8b854feb343136e7bbd3f8b0ea5a884d324ef66295"
     end
   end
-  license "Apache-2.0"
+  license "AGPL-3.0"
 
   BINARY_ALIASES = {
     "aarch64-unknown-linux-gnu":          {},
