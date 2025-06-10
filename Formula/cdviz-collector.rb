@@ -1,19 +1,19 @@
 class CdvizCollector < Formula
   desc "A service & cli to collect SDLC/CI/CD events and to dispatch as cdevents."
   homepage "https://cdviz.dev"
-  version "0.8.0"
+  version "0.8.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.8.0/cdviz-collector-aarch64-apple-darwin.tar.xz"
-    sha256 "38d7cff86c93344b1c2320f3e3803191e33a3032831a591237edfe06fa14f99a"
+    url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.8.1/cdviz-collector-aarch64-apple-darwin.tar.xz"
+    sha256 "83aefb864711090844004ccefd3786a08950887631b5059f94198c76af526ccb"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.8.0/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "40944cf3f9880b829bc9e581090cca0f2780ec44d46e117cc9df1321991228f0"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.8.1/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9c6029c41efc466083e2107e70c4e27df7fd140ee5c6b1edf735656c21ce5ffd"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.8.0/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ffad41fcead62c50e2cd75f03f88a7d1cfaaee37119a1ee9f96d196e94d09eaa"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.8.1/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "19b8a402fda86720e35b0995845cbc8d28068527d9fe7f815e1de1f973460040"
     end
   end
   license "AGPL-3.0"
