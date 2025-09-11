@@ -1,31 +1,27 @@
 class CdvizCollector < Formula
   desc "A service and CLI tool for collecting SDLC/CI/CD events and dispatching them as CDEvents"
   homepage "https://cdviz.dev"
-  version "0.14.2"
+  version "0.15.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.14.2/cdviz-collector-aarch64-apple-darwin.tar.xz"
-    sha256 "2a5bd036666c980a157114cb80421e3abf826dc9a88f888e17f4fe822f73e29d"
+    url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.15.0/cdviz-collector-aarch64-apple-darwin.tar.xz"
+    sha256 "80aaae5a294a6f74bf8ee081fd1feb7c44c06b8af75755126a8b282536704eba"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.14.2/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "66eb9cee4f050d96363261359f091c5dc6c97b79e0b8db5640d084c61f7c1f7f"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.15.0/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "db48a793cfe9924fb47087d338f8447f45bfffdd05d7bc29b884a226da814d9f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.14.2/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "08b1d8becd606f185049de1b6f6c56bb0d849d1e590bfa0f617ae7550be28462"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.15.0/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "deec1227a283b06a92aed1af655bc65b74f36c6938011599d7b673207c9b96ae"
     end
   end
-  license "AGPL-3.0"
+  license "Apache-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":               {},
-    "aarch64-unknown-linux-gnu":          {},
-    "aarch64-unknown-linux-musl-dynamic": {},
-    "aarch64-unknown-linux-musl-static":  {},
-    "x86_64-unknown-linux-gnu":           {},
-    "x86_64-unknown-linux-musl-dynamic":  {},
-    "x86_64-unknown-linux-musl-static":   {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
