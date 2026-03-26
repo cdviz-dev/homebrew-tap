@@ -1,27 +1,29 @@
 class CdvizCollector < Formula
   desc "A service and CLI tool for collecting SDLC/CI/CD events and dispatching them as CDEvents"
   homepage "https://cdviz.dev"
-  version "0.33.0"
+  version "0.33.2"
   if OS.mac? && Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.33.0/cdviz-collector-aarch64-apple-darwin.tar.xz"
-      sha256 "6aec818b564bd917c71a010767826e9d9048b42652a094be55ed4b624688a8ce"
+    url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.33.2/cdviz-collector-aarch64-apple-darwin.tar.xz"
+    sha256 "5f6bd7aa9315f0dab94274a2bd0b38a6c8919b590184d74ac3ed7e37e5a2fa03"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.33.0/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c47d48c2c08cee831673dc62ccda02c8846507874e4f260803dac7c47e481d74"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.33.2/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "bc9a288b3b3550018c77245d9f13e2bf13c18c8f7292a6264571252f26338513"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.33.0/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ef841eec55f00c26abc5c65364c539745450afd4f66314d6bb238f3adf090fa1"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.33.2/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "1a9eddf61f4b65bb8d0e02ff6e92d4d06e655f983d5c92a7657569856dbff57a"
     end
   end
   license "Apache-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":              {},
+    "aarch64-unknown-linux-gnu":         {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
   }.freeze
 
   def target_triple
