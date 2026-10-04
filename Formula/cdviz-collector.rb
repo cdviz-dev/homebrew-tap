@@ -1,19 +1,25 @@
 class CdvizCollector < Formula
   desc "A service and CLI tool for collecting SDLC/CI/CD events and dispatching them as CDEvents"
   homepage "https://cdviz.dev"
-  version "0.52.0"
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.52.0/cdviz-collector-aarch64-apple-darwin.tar.xz"
-    sha256 "15777ba3a5fcd690566b7ef3e1e27bc20df07a0e2a900ca543893be7a03c7081"
+  version "0.53.0"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.0/cdviz-collector-aarch64-apple-darwin.tar.xz"
+      sha256 "f934e836f923103d73e6fcb83667dc20725d98e49ad7fa7a4747dd3eaeb25dcf"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.0/cdviz-collector-x86_64-apple-darwin.tar.xz"
+      sha256 "fccfa603072dabcec03c6aa243f7d5e78eb0a2a22964f317e58dfa1f1c0ebd1d"
+    end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.52.0/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "73c0b2eaf674088758ef365fe556b3994a8eaca6b8bb64080656f463262093bc"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.0/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3a9ef9c28ebae053e3bb9dce20b7aa27c623db3c47b4a33821f5f584eb9a2891"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.52.0/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9cba2f94cace5c19aaf0c8bc6081af3dd4a15b6d047977db0eb787a223079243"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.0/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6b40e03899a712845fab46d27712f43bbe76c416933b37309c93563dad712614"
     end
   end
   license "Apache-2.0"
@@ -21,6 +27,8 @@ class CdvizCollector < Formula
   BINARY_ALIASES = {
     "aarch64-apple-darwin":              {},
     "aarch64-unknown-linux-gnu":         {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
     "x86_64-unknown-linux-gnu":          {},
     "x86_64-unknown-linux-musl-dynamic": {},
     "x86_64-unknown-linux-musl-static":  {},
@@ -43,6 +51,9 @@ class CdvizCollector < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
+      bin.install "cdviz-collector"
+    end
+    if OS.mac? && Hardware::CPU.intel?
       bin.install "cdviz-collector"
     end
     if OS.linux? && Hardware::CPU.arm?
