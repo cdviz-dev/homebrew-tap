@@ -1,25 +1,25 @@
 class CdvizCollector < Formula
   desc "A service and CLI tool for collecting SDLC/CI/CD events and dispatching them as CDEvents"
   homepage "https://cdviz.dev"
-  version "0.53.1"
+  version "0.54.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.1/cdviz-collector-aarch64-apple-darwin.tar.xz"
-      sha256 "cf793661a52e40f28874586b9909f5528dd7064a3b096e89f19bfff339f904f0"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.54.0/cdviz-collector-aarch64-apple-darwin.tar.xz"
+      sha256 "25d8ea5436900f507c56fa0cfc7abf5cbd89915f0ad9a60b4f8aa6bf78a0e2cd"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.1/cdviz-collector-x86_64-apple-darwin.tar.xz"
-      sha256 "b5fbf2bf9ea654d78de7bad3a1c85c2f93bd7e5d0774d24227c618ffa109f044"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.54.0/cdviz-collector-x86_64-apple-darwin.tar.xz"
+      sha256 "ae082ecd7fd8ef0843d58a91a9236705d1e7f4ad163f7556551084a6a3476eb3"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.1/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f61d7a4ac783abf6d2a6f3840a6d9b66556259fc70d10a62490f216da12bd003"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.54.0/cdviz-collector-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "086fd89b4c4cb5368e659c647ef5d061b3efac8c9396d5b0d0b6bdd14aee9768"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.53.1/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8287ae0491589bd1c410a8517853ada81fb4e03ff8ae8220186e873bd2470e65"
+      url "https://github.com/cdviz-dev/cdviz-collector/releases/download/0.54.0/cdviz-collector-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "026a972dddda769b8eeecadb849737b220f618360f9045eaef4cfcc3d8c6daf7"
     end
   end
   license "Apache-2.0"
